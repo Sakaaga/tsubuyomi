@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>粒読み(tsubuyomi) — 一粒ずつ、省略しない。Claude用スキル</title>
-<meta name="description" content="法令や論文を、原文を1文字も飛ばさずに、Claudeと対話しながら1条ずつ・1段落ずつ読み解くスキル「粒読み」。e-Govの4形式(XML/HTML/RTF/PDF)に対応。">
+<title>粒読み(tsubuyomi) — 一粒ずつ、省略しない。ChatGPT向け</title>
+<meta name="description" content="法令や論文を、原文を確認しながら、ChatGPTと対話して1条ずつ・1段落ずつ読み解く「粒読み」。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='28' fill='%23c49e56'/%3E%3C/svg%3E">
 
 <meta property="og:title" content="粒読み(tsubuyomi) — 一粒ずつ、省略しない。">
-<meta property="og:description" content="法令や論文を、Claudeと対話しながら1条ずつ読み解くスキル。">
+<meta property="og:description" content="法令や論文を、ChatGPTと対話しながら1条ずつ読み解く「粒読み」。">
 <meta property="og:image" content="https://raw.githubusercontent.com/RT2231/tsubuyomi/main/assets/social-preview.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -167,14 +167,14 @@
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">CLAUDE AGENT SKILL</p>
+    <p class="eyebrow">CHATGPT 向け</p>
     <h1 class="title">粒読み</h1>
     <p class="romaji">tsubuyomi</p>
     <p class="catch">一粒ずつ、省略しない。</p>
-    <p class="catch sub">法令と論文を、Claude と対話しながら読み解く。</p>
+    <p class="catch sub">法令と論文を、ChatGPT と対話しながら読み解く。</p>
     <div class="cta-row">
-      <a class="btn primary" href="https://github.com/RT2231/tsubuyomi/raw/main/tsubuyomi.skill">.skill をダウンロード</a>
-      <a class="btn ghost" href="https://github.com/RT2231/tsubuyomi">GitHubで見る</a>
+      <a class="btn primary" href="https://github.com/Sakaaga/tsubuyomi/raw/main/tsubuyomi.skill">.skill をダウンロード</a>
+      <a class="btn ghost" href="https://github.com/Sakaaga/tsubuyomi">GitHubで見る</a>
     </div>
   </div>
 </header>
@@ -184,7 +184,7 @@
   <section id="about">
     <div class="wrap">
       <h2 class="section-title">要約では、読んだことにならない</h2>
-      <p class="lead">法令も論文も、要約は「わかった気」を与えてくれます。でも実際に必要なのは、条文の一言一句、段落の一文一文を確かめることです。粒読みは、原文を飛ばさず、あなたのペースで一粒ずつ読み進めるための Claude スキルです。</p>
+      <p class="lead">法令も論文も、要約は「わかった気」を与えてくれます。でも実際に必要なのは、条文の一言一句、段落の一文一文を確かめることです。粒読みは、原文を飛ばさず、あなたのペースで一粒ずつ読み進めるための読み解き手順です。</p>
     </div>
   </section>
 
@@ -247,33 +247,14 @@
 
   <section id="install">
     <div class="wrap">
-      <h2 class="section-title">インストール</h2>
+      <h2 class="section-title">ChatGPTで使う</h2>
 
-      <div class="install-tabs" role="tablist">
-        <button class="install-tab active" data-tab="claudeai">Claude.ai</button>
-        <button class="install-tab" data-tab="code">Claude Code</button>
-        <button class="install-tab" data-tab="api">API</button>
-      </div>
-
-      <div class="install-panel active" id="panel-claudeai">
-        <ol class="steps">
-          <li><a href="https://github.com/RT2231/tsubuyomi/raw/main/tsubuyomi.skill">tsubuyomi.skill</a> をダウンロードする</li>
-          <li>Claude.aiの<b>設定 → Capabilities(機能)</b>で「コード実行とファイル作成」がオンになっていることを確認する</li>
-          <li>Skillsの項目から「Upload skill」でファイルを選ぶ</li>
-          <li>一覧に表示された「tsubuyomi」のトグルをオンにする</li>
-        </ol>
-        <p style="font-size:14px; margin-top:18px;">Free・Pro・Max・Team・Enterprise、いずれのプランでも利用できます。</p>
-      </div>
-
-      <div class="install-panel" id="panel-code">
-        <p style="font-size:15px; margin-bottom:16px;"><code>SKILL.md</code> と <code>references/</code> フォルダを、スキルディレクトリに配置します。</p>
-        <pre class="code-block">git clone https://github.com/RT2231/tsubuyomi.git
-cp -r tsubuyomi/{SKILL.md,references} ~/.claude/skills/tsubuyomi/</pre>
-      </div>
-
-      <div class="install-panel" id="panel-api">
-        <p style="font-size:15px;"><code>/v1/skills</code> エンドポイントへアップロードして利用します。コード実行ツールの有効化とベータヘッダーの指定が必要です。詳しくは <a href="https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview">Agent Skills のドキュメント</a>を参照してください。</p>
-      </div>
+      <ol class="steps">
+        <li>ChatGPTで、読みたい法令・論文のファイルを添付するか、本文またはURLを用意します。</li>
+        <li>「粒読みを使って、この資料を一粒ずつ読み解いてください」と依頼します。</li>
+        <li>原文と解説を確認し、理解できたら「次へ」と伝えて進めます。</li>
+      </ol>
+      <p style="font-size:14px; margin-top:18px;">利用できる機能やファイル対応は、ChatGPTのプラン・設定・提供形態によって異なる場合があります。粒読みはOpenAIが提供・運営する公式サービスではなく、独立した開発者によるプロジェクトです。</p>
     </div>
   </section>
 
@@ -281,7 +262,7 @@ cp -r tsubuyomi/{SKILL.md,references} ~/.claude/skills/tsubuyomi/</pre>
     <div class="wrap">
       <h2 class="section-title">ご利用にあたって</h2>
       <p class="disclaimer">
-        本スキルは、法令・論文を理解する助けを目的としており、法的助言・実務上の判断の代わりにはなりません。出力される言い換えや解説には誤りが含まれる可能性があるため、原文と必ず照合してください。現状有姿(AS IS)で無償提供しており、利用によって生じた損害について作者は責任を負いません(<a href="https://github.com/RT2231/tsubuyomi/blob/main/LICENSE">MIT License</a>)。
+        本スキルは、法令・論文を理解する助けを目的としており、法的助言・実務上の判断の代わりにはなりません。出力される言い換えや解説には誤りが含まれる可能性があるため、原文と必ず照合してください。本ツールは現状有姿(AS IS)で提供され、法的助言や専門家による判断の代わりにはなりません。利用条件は<a href="terms.html">利用規約</a>をご確認ください。(<a href="https://github.com/Sakaaga/tsubuyomi/blob/main/LICENSE">MIT License</a>)
       </p>
     </div>
   </section>
@@ -291,8 +272,9 @@ cp -r tsubuyomi/{SKILL.md,references} ~/.claude/skills/tsubuyomi/</pre>
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
     <span>粒読み(tsubuyomi) · MIT License</span>
-    <span><a href="https://github.com/RT2231/tsubuyomi">github.com/RT2231/tsubuyomi</a></span>
+    <span><a href="https://github.com/Sakaaga/tsubuyomi">GitHub</a>　<a href="privacy.html">プライバシーポリシー</a>　<a href="terms.html">利用規約</a>　<a href="support.html">サポート</a></span>
   </div>
+  <p class="disclaimer" style="width:100%; margin-top:18px;">粒読みはOpenAIまたはChatGPTの公式サービスではありません。</p>
 </footer>
 
 <script>
